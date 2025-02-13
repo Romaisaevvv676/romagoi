@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Особенное приглашение от меня, Ботам ❤️</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: black;
+        }
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+            animation: fadeIn 1.5s ease-out;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 30%;
+            max-width: 120px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+        button {
+            background: pink;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+        }
+        .hidden {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @media (max-width: 768px) {
+            .container {
+                max-width: 95%;
+                padding: 15px;
+            }
+            .image-container img {
+                width: 28%;
+                max-width: 100px;
+            }
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe class="video-bg" width="100%" height="100%" src="https://www.youtube.com/embed/jpzr0lsgTVg?autoplay=1&mute=1&loop=1&playlist=jpzr0lsgTVg" frameborder="0" allowfullscreen></iframe>
+
+    <audio id="bg-music" loop>
+        <source src="https://drive.google.com/uc?export=download&id=18SbcwsDGmawkvR-7LexRNMf335HZr6U-" type="audio/mp3">
+    </audio>
+
+    <div class="container">
+        <h2>Какая фотография мне нравится?</h2>
+        <div class="image-container">
+            <img src="https://i.pinimg.com/736x/fa/a4/8a/faa48a1d12e733256d7601bbb386a042.jpg" onclick="wrongChoice()">
+            <img src="https://i.pinimg.com/736x/fa/f3/eb/faf3eb5fdc98f18c3e0a0ad99b8563af.jpg" onclick="correctChoice()">
+            <img src="https://i.pinimg.com/736x/2a/28/dd/2a28dde5ee88cb2d7aad19283e084cc0.jpg" onclick="wrongChoice()">
+        </div>
+        <h2 id="message" class="hidden">Сможешь ли ты сделать меня самой счастливой сегодня вечером?</h2>
+        <h2 id="waitMessage" class="hidden">Я жду тебя здесь ❤️ </h2>
+        <div id="map-container" class="hidden">
+            <a href="https://go.2gis.com/Nktp6" target="_blank">
+                <button>2GIS</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function correctChoice() {
+            document.getElementById('message').classList.remove('hidden');
+            document.getElementById('waitMessage').classList.remove('hidden');
+            document.getElementById('map-container').classList.remove('hidden');
+        }
+        function wrongChoice() {
+            alert('Бұл емес! Басқа суретті байқап көр!');
+        }
+    </script>
+</body>
+</html>
